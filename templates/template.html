@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Generador de Links</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="static/styles.css">
+</head>
+<body>
+  <h1>Generar Links</h1>
+  <main class="container-md">
+    <div class="row">
+      <div class="col-md-5">
+        <h2>Datos:</h2>
+        <form id="form" method="POST" onsubmit="return false;">
+          <div class="form-group">
+            <label for="url">URL</label>
+            <input id="input_url" name="url" type="text" class="form-control" value="https://tdmob-test.macro.com.ar/tramiteonline/eresumen/">
+          </div>
+          <div class="form-group">
+            <label for="cuils">CUIL/s</label>
+            <textarea id="input_cuils" name="cuils" class="form-control"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="emails">E-mail/s</label>
+            <textarea id="input_emails" name="emails" class="form-control"></textarea>
+          </div>
+          <input type="submit" value="Generar" class="btn btn-primary">
+        </form>
+      </div>
+      <div class="col-md-6 offset-md-1">
+        <h2>Links:</h2>
+        <div id="links" class="links"></div>
+      </div>
+    </div>
+  </main>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="static/scripts.js"></script>
+</body>
+</html>
