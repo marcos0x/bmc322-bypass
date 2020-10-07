@@ -10,7 +10,8 @@ with app.test_request_context():
 
 def obscure(data):
     dataStr = zlib.compress(str(data), 9)
-    return b64e(dataStr.encode())
+    dataBytes = bytes(dataStr, 'utf-8')
+    return b64e(dataBytes)
 
 def unobscure(obscured):
     return zlib.decompress(b64d(obscured))
