@@ -14,7 +14,8 @@ def obscure(dataStr):
 def getLink(url, cuil, mail):
     oCuil = obscure(cuil)
     oMail = obscure(mail)
-    return url+'?data='+oCuil+'&m='+oMail+'&utm_source=Email&utm_medium=Canales_Adquisicion'
+    link = url+'?data='+oCuil+'&m='+oMail+'&utm_source=Email&utm_medium=Canales_Adquisicion'
+    return link
 
 @app.route('/api/links', methods=['POST'])
 def links():
