@@ -5,6 +5,7 @@ $(document).ready(function () {
       cuils: $('#input_cuils').val().split('\n').join(','),
       emails: $('#input_emails').val().split('\n').join(','),
     }
+
     $.ajax({
       url: '/api/links',
       type: 'post',
