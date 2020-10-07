@@ -9,7 +9,7 @@ with app.test_request_context():
     url_for('static', filename='styles.css')
 
 def obscure(data):
-    return b64e(zlib.compress(str(data), 9))
+    return b64e(zlib.compress(data, 9))
 
 def unobscure(obscured):
     return zlib.decompress(b64d(obscured))
