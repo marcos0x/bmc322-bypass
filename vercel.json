@@ -1,7 +1,5 @@
 {
-  "name": "bmc322-bypass",
   "version": 2,
-  "alias": "bmc322-bypass",
   "builds": [{
     "src": "./index.py",
     "use": "@liudonghua123/now-flask"
