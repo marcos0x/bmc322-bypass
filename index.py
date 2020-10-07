@@ -8,13 +8,8 @@ app = Flask(__name__)
 with app.test_request_context():
     url_for('static', filename='styles.css')
 
-def obscure(data):
-    dataStr = zlib.compress(str(data), 9)
-    dataBytes = bytes(dataStr, 'utf-8')
-    return b64e(dataBytes)
-
-def unobscure(obscured):
-    return zlib.decompress(b64d(obscured))
+def obscure(dataStr):
+    return b64e(zlib.compress(str(dataStr), 9))
 
 def getLink(url, cuil, mail):
     oCuil = obscure(cuil)
@@ -23,7 +18,6 @@ def getLink(url, cuil, mail):
 
 @app.route('/api/links', methods=['POST'])
 def links():
-    # data = request.get_json()
     data = request.get_json()
     url = data['url']
     cuils = data['cuils'].split(',')
