@@ -1,15 +1,22 @@
 {
-    "version": 2,
-    "builds": [
-        {
-            "src": "./index.py",
-            "use": "@liudonghua123/now-flask"
-        }
-    ],
-    "routes": [
-        {
-            "src": "/(.*)",
-            "dest": "/"
-        }
-    ]
+  "name": "bmc322-bypass",
+  "version": 2,
+  "alias": "bmc322-bypass",
+  "builds": [{
+    "src": "./index.py",
+    "use": "@liudonghua123/now-flask"
+  }],
+  "env": {
+    "FLASK_APP": "./index.py",
+    "FLASK_DEBUG": 1
+  },
+  "routes": [{
+    "headers": {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
+        "Access-Control-Allow-Headers": "X-Requested-With, Content-Type, Accept"
+    },
+    "src": "/(.*)",
+    "dest": "/"
+  }]
 }
