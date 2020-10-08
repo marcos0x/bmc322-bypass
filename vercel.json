@@ -3,8 +3,9 @@
   "version": 2,
   "builds": [
     {
+      "config": { "runtime": "python2.7" },
       "src": "./index.py",
-      "use": "@now/flask"
+      "use": "@ardnt/now-python-wsgi"
     }
   ],
   "env": {
