@@ -19,9 +19,7 @@ h2 {
   margin: 0 0 30px;
 }
 
-.alert svg {
-  position: relative;
-  top: -1px;
+.alert i {
   margin-right: 5px;
 }
 
@@ -37,12 +35,35 @@ textarea.form-control {
   min-height: 150px;
 }
 
+.form-footer .btn {
+  margin: 0 0 15px;
+}
+
 .links {
   border: 1px solid #ccc;
   border-radius: 10px;
   margin: 0 0 40px;
-  padding: 15px;
   height: 465px;
-  overflow: auto;
   font-size: 13px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.links .alert {
+  margin: 0;
+  border-radius: 5px 5px 0 0;
+  padding-top: 8px;
+  padding-bottom: 10px;
+}
+
+.links .content {
+  display: flex;
+  flex: 1;
+  padding: 15px;
+  overflow: auto;
+}
+
+.links .link {
+  margin: 0 0 15px;
 }

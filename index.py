@@ -27,12 +27,14 @@ def links():
     index = 0
     links = []
     for cuil in cuils:
-        if len(emails) > 1:
-            email = emails[index]
-        else:
-            email = emails[0]
+        if cuil:
+            if len(emails) > 1:
+                email = emails[index]
+            else:
+                email = emails[0]
+                pass
+            links.append(getLink(url, cuil, email))
             pass
-        links.append(getLink(url, cuil, email))
         index += 1
         pass
 
