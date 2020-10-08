@@ -3,8 +3,9 @@
   "version": 2,
   "builds": [
     {
+      "config": { "python": "2.7" },
       "src": "./index.py",
-      "use": "now-python-builder-fix"
+      "use": "@now/python"
     }
   ],
   "env": {
