@@ -3,7 +3,7 @@
   "version": 2,
   "builds": [
     {
-      "config": { "runtime": "python3.5" },
+      "config": { "runtime": "python2.7" },
       "src": "./index.py",
       "use": "@ardnt/now-python-wsgi"
     }
