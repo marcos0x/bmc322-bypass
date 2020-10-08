@@ -1,17 +1,31 @@
 body {
-  padding: 40px 100px;
+  padding: 10px;
 }
 
 h1 {
   font-size: 32px;
-  font-weight: 500;
+  font-weight: 600;
   text-align: center;
-  margin: 0 0 50px;
+  margin: 20px 0 30px;
 }
 
 h2 {
   font-size: 20px;
-  font-weight: 500;
+  font-weight: 600;
+  margin: 0 0 20px;
+}
+
+.alert {
+  margin: 0 0 30px;
+}
+
+.alert svg {
+  position: relative;
+  top: -1px;
+  margin-right: 5px;
+}
+
+form {
   margin: 0 0 40px;
 }
 
@@ -26,7 +40,9 @@ textarea.form-control {
 .links {
   border: 1px solid #ccc;
   border-radius: 10px;
+  margin: 0 0 40px;
   padding: 15px;
-  min-height: 465px;
+  height: 465px;
+  overflow: auto;
   font-size: 13px;
 }
