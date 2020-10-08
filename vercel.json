@@ -1,4 +1,6 @@
 {
+  "name": "bmc322-bypass",
+  "alias": "bmc322-bypass",
   "version": 2,
   "builds": [{
     "src": "./index.py",
