@@ -2,6 +2,7 @@ import zlib
 import json
 from flask import Flask, request, Response, url_for, render_template, jsonify
 from base64 import urlsafe_b64encode as b64e, urlsafe_b64decode as b64d
+from werkzeug._compat import to_bytes
 
 app = Flask(__name__)
 

@@ -4,7 +4,7 @@
   "builds": [
     {
       "src": "./index.py",
-      "use": "now-builder-python"
+      "use": "now-python-builder-fix"
     }
   ],
   "env": {
