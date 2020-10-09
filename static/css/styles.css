@@ -40,8 +40,8 @@ textarea.form-control {
 }
 
 .links {
-  border: 1px solid #ccc;
-  border-radius: 10px;
+  border: 1px solid #ced4da;
+  border-radius: .25rem;
   margin: 0 0 40px;
   height: 465px;
   font-size: 13px;
@@ -52,7 +52,9 @@ textarea.form-control {
 
 .links .alert {
   margin: 0;
-  border-radius: 5px 5px 0 0;
+  border-width: 0;
+  border-bottom-width: 1px;
+  border-radius: .25rem .25rem 0 0;
   padding-top: 8px;
   padding-bottom: 10px;
 }

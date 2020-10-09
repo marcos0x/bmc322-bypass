@@ -6,42 +6,38 @@ from werkzeug._compat import to_bytes
 
 app = Flask(__name__)
 
-with app.test_request_context():
-    url_for('static', filename='styles.css')
-
 def obscure(dataStr):
     return b64e(zlib.compress(str(dataStr), 9))
 
 def getLink(url, cuil, mail):
     oCuil = obscure(cuil)
     oMail = obscure(mail)
-    link = url+'?data='+oCuil+'&m='+oMail+'&utm_source=Email&utm_medium=Canales_Adquisicion'
-    return link
+    return url+'?data='+oCuil+'&m='+oMail+'&utm_source=Email&utm_medium=Canales_Adquisicion'
 
 @app.route('/api/links', methods=['POST'])
 def links():
     data = request.get_json()
-    url = data['url']
+    url = 'https://stg-bmc322.globant.com/tramiteonline/eresumen/'
     cuils = data['cuils'].split(',')
     emails = data['emails'].split(',')
     index = 0
     links = []
+
+    if data['url']:
+        url = data['url']
+
     for cuil in cuils:
         if cuil:
-            if len(emails) > 1:
-                email = emails[index]
-            else:
-                email = emails[0]
-                pass
-            links.append(getLink(url, cuil, email))
-            pass
-        index += 1
-        pass
+            email = emails[0]
 
-    return jsonify({
-        "links": links
-    })
+            if len(emails) > 1 and emails[index]:
+                email = emails[index]
+
+            links.append(getLink(url, cuil, email))
+        index += 1
+
+    return jsonify({ "links": links })
 
 @app.route('/')
-def index():
-    return render_template('template.html')
+def home():
+    return render_template('home.html')
